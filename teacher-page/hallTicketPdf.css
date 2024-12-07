@@ -1,0 +1,43 @@
+/* Example of styling similar to your hallTicket.php */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #9b00ca;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.student-info, .exam-details, .time-table {
+    padding: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}

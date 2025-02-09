@@ -155,11 +155,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 This project is currently not under any license.
 
 ## Support
-For support, email [your-email@domain.com]
+For support, email [ajintsdev@gmail.com]
 
 ## Authors
-- [Your Name]
-- [Other Contributors]
+- [Ajin TS]
 
 ## Acknowledgments
 - PHPMailer team for the email functionality

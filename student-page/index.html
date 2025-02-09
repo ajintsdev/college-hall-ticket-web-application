@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>
+      Exam In - Hall Ticket Management System
+     </title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+     <style>
+      body {
+               font-family: 'Poppins', sans-serif;
+           }
+     </style>
+    <script type="text/javascript" src="app.js" defer></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <ul>
+        <li>
+          <span class="logo">ExamIn</span>
+
+          <button onclick="toggleSidebar()" id="toggle-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"
+              />
+            </svg>
+          </button>
+        </li>
+        <li class="active">
+          <a href="index.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
+              />
+            </svg>
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+       
+        <li>
+          <a href="selectHallTicket.php">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"
+              />
+            </svg>
+          
+            <span>Hall Ticket</span>
+          </a>
+        </li>
+        <li>
+          <a href="../Login-Signup/Login/login.php">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"
+              />
+            </svg>
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class=" mx-auto mt-10">
+      <header class="bg-[#9b00ca] text-center text-white py-4">
+         <h1 class="text-3xl font-bold">
+          Exam In
+         </h1>
+      </header> 
+      <section class="text-center">
+       <h2 class="text-4xl mt-9 font-bold mb-4">
+        Welcome to Exam In
+       </h2>
+       <p class="text-lg mb-8">
+        Your ultimate solution for managing hall tickets efficiently and effortlessly.
+       </p>
+       <a class="bg-[#9b00ca] text-white py-2 px-4 rounded hover:bg-purple-700" href="selectHallTicket.php">
+        Get Started
+       </a>
+      </section>
+      <section class="mt-16">
+       <h3 class="text-3xl font-bold text-center mb-8">
+        Features
+       </h3>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+         <i class="fas fa-ticket-alt text-[#9b00ca] text-4xl mb-4">
+         </i>
+         <h4 class="text-2xl font-bold mb-2">
+          Easy Ticket Generation
+         </h4>
+         <p>
+          Generate hall tickets with ease using our intuitive interface.
+         </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+         <i class="fas fa-user-check text-[#9b00ca] text-4xl mb-4">
+         </i>
+         <h4 class="text-2xl font-bold mb-2">
+          Student Verification
+         </h4>
+         <p>
+          Verify student details quickly and accurately.
+         </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+         <i class="fas fa-file-alt text-[#9b00ca] text-4xl mb-4">
+         </i>
+         <h4 class="text-2xl font-bold mb-2">
+          Detailed Reports
+         </h4>
+         <p>
+          Access detailed reports on ticket issuance and student attendance.
+         </p>
+        </div>
+       </div>
+      </section>
+      <section class="mt-16">
+       <h3 class="text-3xl font-bold text-center mb-8">
+        Latest News
+       </h3>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+         <img alt="Image of a person holding a hall ticket" class="mb-4 rounded" height="200" src="https://storage.googleapis.com/a1aa/image/Ad8Oz1f3GEwXOyxk9T01Td28W7JErEEXD41cQcHh2XSxju3JA.jpg" width="300"/>
+         <h4 class="text-2xl font-bold mb-2">
+          New Feature: Bulk Ticket Generation
+         </h4>
+         <p>
+          We have introduced a new feature that allows bulk generation of hall tickets.
+         </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+         <img alt="Image of a person using a laptop to check hall ticket details" class="mb-4 rounded" height="200" src="https://storage.googleapis.com/a1aa/image/2g36mfAwV0rHSdAYnYMfes7WF9EADZR4hbbG0y0dIIHP6eOB.jpg" width="300"/>
+         <h4 class="text-2xl font-bold mb-2">
+          Website Launched
+         </h4>
+         <p>
+          We are excited to announce the launch of our new website for easier access to hall tickets and management tools.
+         </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+         <img alt="Image of a person using a laptop to generate hall tickets" class="mb-4 rounded" height="200" src="https://storage.googleapis.com/a1aa/image/w9qeyfbfe5EOHSJSp5K2qOJ9k75b992RHSWmtsO8LxCHeo7dC.jpg" width="300"/>
+         <h4 class="text-2xl font-bold mb-2">
+          User Success Stories
+         </h4>
+         <p>
+          Read about how our users have successfully managed their exam processes with Exam In.
+         </p>
+        </div>
+       </div>
+      </section>
+      <footer class="bg-[#9b00ca] text-white py-4 mt-16">
+        <div class=" mx-auto text-center">
+          <p class="text-white">
+            © 2023 Exam In. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

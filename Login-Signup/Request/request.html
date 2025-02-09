@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+</head>
+<body>
+  <div class="wrapper">
+    <section class="form signup">
+      <header>Exam In</header>
+      <form id="signup-form" name="form" method="POST" autocomplete="off">
+        <div id="response-message"></div> <!-- This will hold success or error messages -->
+        <div class="name-details">
+          <div class="field input">
+            <label>First Name</label>
+            <input type="text" name="fname" id="fname" placeholder="First Name" required autocomplete="off" />
+          </div>
+          <div class="field input">
+            <label>Last Name</label>
+            <input type="text" name="lname" id="lname" placeholder="Last Name" required autocomplete="off" />
+          </div>
+        </div>
+        <div class="field input">
+          <label>Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter Your Email" required autocomplete="off" />
+        </div>
+        <div class="field input">
+          <label>Admission Number</label>
+          <input type="text" name="adm-number" id="adm-number" placeholder="Enter The Number" required />
+        </div>
+        <div class="field button">
+          <input type="submit" value="Request" />
+        </div>
+      </form>
+      <div class="link">Already signed up? <a href="../Login/login.php">Login now</a></div>
+    </section>
+  </div>
+  
+
+    <script>document.getElementById('signup-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      const formData = new FormData(this);
+    
+      fetch('php/request.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text()) // Get response as text
+      .then(data => {
+        document.getElementById('response-message').innerHTML = data; // Display response in #response-message div
+        // Show the appropriate div based on the message received
+        const successDiv = document.querySelector('.success-text');
+        const errorDiv = document.querySelector('.error-text');
+        if (data.includes('success-text')) {
+            successDiv.style.display = 'block';
+            errorDiv.style.display = 'none';
+        } else if (data.includes('error-text')) {
+            errorDiv.style.display = 'block';
+            successDiv.style.display = 'none';
+        }
+      })
+      .catch(error => console.error('Error:', error));
+    });
+    </script>
+</body>
+</html>
